@@ -1,0 +1,94 @@
+﻿<Window x:Class="AcademicSysrem.AdminWindowPriskirt"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AcademicSysrem"
+        mc:Ignorable="d"
+        Title="AdminWindowPriskirt" Height="450" Width="800">
+    <Window.Resources>
+        <Style x:Key="RoundedButtonStyle" TargetType="Button">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="10">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <Viewbox>
+        <Grid Width="830">
+            <Rectangle HorizontalAlignment="Left" Height="450" Stroke="Black" VerticalAlignment="Top" Width="133" Fill="#FF60A9ED" Grid.RowSpan="4" Margin="-6,0,0,0"/>
+            <Button Content="Atsijungti" HorizontalAlignment="Left" Margin="8,418,0,0" VerticalAlignment="Top" Width="104" Height="22" FontSize="13" FontWeight="Bold" Click="Button_Click"
+    Style="{StaticResource RoundedButtonStyle}">
+                <Button.BorderBrush>
+                    <SolidColorBrush Color="Black"/>
+                </Button.BorderBrush>
+                <Button.BorderThickness>
+                    <Thickness>1.5</Thickness>
+                </Button.BorderThickness>
+                <Button.Background>
+                    <SolidColorBrush Color="White"/>
+                </Button.Background>
+            </Button>
+            <Button Content="Šalinti" HorizontalAlignment="Left" Margin="10,292,0,0" VerticalAlignment="Top" Width="104" Height="22" FontSize="13" FontWeight="Bold" Click="Button_Click_Drop"
+Style="{StaticResource RoundedButtonStyle}">
+                <Button.BorderBrush>
+                    <SolidColorBrush Color="Black"/>
+                </Button.BorderBrush>
+                <Button.BorderThickness>
+                    <Thickness>1.5</Thickness>
+                </Button.BorderThickness>
+                <Button.Background>
+                    <SolidColorBrush Color="White"/>
+                </Button.Background>
+            </Button>
+            <Button Name="Teacher" Visibility="Hidden" Content="Išsaugoti" HorizontalAlignment="Left" Margin="539,338,0,0" VerticalAlignment="Top" Width="104" Height="22" FontSize="13" FontWeight="Bold" Click="Button_Click_Save"
+Style="{StaticResource RoundedButtonStyle}">
+                <Button.BorderBrush>
+                    <SolidColorBrush Color="Black"/>
+                </Button.BorderBrush>
+                <Button.BorderThickness>
+                    <Thickness>1.5</Thickness>
+                </Button.BorderThickness>
+                <Button.Background>
+                    <SolidColorBrush Color="White"/>
+                </Button.Background>
+            </Button>
+            <Button Content="Kurti" HorizontalAlignment="Left" Margin="10,257,0,0" VerticalAlignment="Top" Width="104" Height="22" FontSize="13" FontWeight="Bold" Click="Button_Click_Add"
+Style="{StaticResource RoundedButtonStyle}">
+                <Button.BorderBrush>
+                    <SolidColorBrush Color="Black"/>
+                </Button.BorderBrush>
+                <Button.BorderThickness>
+                    <Thickness>1.5</Thickness>
+                </Button.BorderThickness>
+                <Button.Background>
+                    <SolidColorBrush Color="White"/>
+                </Button.Background>
+            </Button>
+            <Image HorizontalAlignment="Left" Height="132" VerticalAlignment="Top" Width="172" Source="Images/R.png" Margin="-5,0,0,0"/>
+            <ComboBox Name="Pasirinkimas" Visibility="Visible" HorizontalAlignment="Left" Margin="247,203,0,0" VerticalAlignment="Top" Width="120" Loaded="Pasirinkimas_Loaded" SelectionChanged="Pasirinkimas_SelectionChanged">
+                <ComboBoxItem>Studentas</ComboBoxItem>
+                <ComboBoxItem>Dėstytojas</ComboBoxItem>
+            </ComboBox>
+            <ComboBox Name="Teachers" Visibility="Hidden" HorizontalAlignment="Left" Margin="531,158,0,0" VerticalAlignment="Top" Width="120" Loaded="Teachers_Loaded"/>
+            <ComboBox Name="Students" Visibility="Hidden" HorizontalAlignment="Left" Margin="531,158,0,0" VerticalAlignment="Top" Width="120" Loaded="Students_Loaded"/>
+            <ComboBox Name="Subjects" Visibility="Hidden" HorizontalAlignment="Left" Margin="531,257,0,0" VerticalAlignment="Top" Width="120" Loaded="Subjects_Loaded"/>
+            <ComboBox Name="Groups" Visibility="Hidden" HorizontalAlignment="Left" Margin="531,257,0,0" VerticalAlignment="Top" Width="120" Loaded="Groups_Loaded"/>
+            <Label Content="Pasirinkite:" HorizontalAlignment="Left" Margin="247,177,0,0" VerticalAlignment="Top" Width="79" FontSize="11" FontWeight="Bold"/>
+            <Label Name="Teach" Visibility="Hidden" Content="Pasirinkite dėstytoją:" HorizontalAlignment="Left" Margin="531,132,0,0" VerticalAlignment="Top" Width="120" FontSize="11" FontWeight="Bold"/>
+            <Label Name="Sub" Visibility="Hidden" Content="Pasirinkite dalyką:" HorizontalAlignment="Left" Margin="531,231,0,0" VerticalAlignment="Top" Width="120" FontSize="11" FontWeight="Bold"/>
+            <Label Name="Grupe" Visibility="Hidden" Content="Pasirinkite grupę:" HorizontalAlignment="Left" Margin="531,231,0,0" VerticalAlignment="Top" Width="120" FontSize="11" FontWeight="Bold"/>
+            <Label Name="Stud" Visibility="Hidden" Content="Pasirinkite studentą:" HorizontalAlignment="Left" Margin="531,132,0,0" VerticalAlignment="Top" Width="120" FontSize="11" FontWeight="Bold"/>
+            <Button Name="Student" Visibility="Hidden" Content="Išsaugoti" HorizontalAlignment="Left" Margin="539,338,0,0" VerticalAlignment="Top" Width="104" Height="22" FontSize="13" FontWeight="Bold" Click="Button_Click_Save1"
+                Style="{StaticResource RoundedButtonStyle}" BorderBrush="Black" Background="White">
+                <Button.BorderThickness>1.5</Button.BorderThickness>
+            </Button>
+
+        </Grid>
+    </Viewbox>
+</Window>                                         

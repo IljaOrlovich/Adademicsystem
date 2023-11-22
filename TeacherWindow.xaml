@@ -1,0 +1,75 @@
+﻿<Window x:Class="AcademicSysrem.TeacherWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AcademicSysrem"
+        mc:Ignorable="d"
+        Title="Teacher" Height="450" Width="800">
+    <Window.Resources>
+        <Style x:Key="RoundedButtonStyle" TargetType="Button">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="10">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <Viewbox>
+        <Grid Width="830">
+            <Rectangle HorizontalAlignment="Left" Height="450" Stroke="Black" VerticalAlignment="Center" Width="133" Fill="#FF60A9ED" Margin="-6,0,0,0"/>
+            <Button Content="Atsijungti" HorizontalAlignment="Left" Margin="8,418,0,0" VerticalAlignment="Top" Width="104" Height="22" FontSize="13" FontWeight="Bold" Click="Button_Click"
+    Style="{StaticResource RoundedButtonStyle}">
+                <Button.BorderBrush>
+                    <SolidColorBrush Color="Black"/>
+                </Button.BorderBrush>
+                <Button.BorderThickness>
+                    <Thickness>1.5</Thickness>
+                </Button.BorderThickness>
+                <Button.Background>
+                    <SolidColorBrush Color="White"/>
+                </Button.Background>
+            </Button>
+            <Image HorizontalAlignment="Left" Height="132" VerticalAlignment="Top" Width="172" Source="Images/R.png" Margin="-5,0,0,0" />
+            <Label Content="Grupės" HorizontalAlignment="Left" Margin="0,158,0,0" VerticalAlignment="Top" FontSize="12" FontWeight="Bold"/>
+            <Label Content="Studentai" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="12" FontWeight="Bold"/>
+            <Label Content="Pažymis" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="12" FontWeight="Bold" Margin="1,322,0,0"/>
+            <Label Content="Dalykas" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="12" FontWeight="Bold" RenderTransformOrigin="0.6,2.699" Margin="1,269,0,0"/>
+            <ComboBox Name="Group" HorizontalAlignment="Left" Margin="0,184,0,0" VerticalAlignment="Top" Width="120" Loaded="Group_Loaded" Height="22" SelectionChanged="Group_SelectionChanged"/>
+            <ComboBox Name="Students" HorizontalAlignment="Left" Margin="1,238,0,0" VerticalAlignment="Top" Width="120" Height="22" Loaded="Students_Loaded" SelectionChanged="Students_SelectionChanged"/>
+            <TextBox x:Name="Grds" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="31" Height="22" TextChanged="TextBox_TextChanged" Margin="1,344,0,0"/>
+            <ComboBox Name="Subject" HorizontalAlignment="Left" Margin="0,295,0,0" VerticalAlignment="Top" Width="120" Height="22" Loaded="Subject_Loaded" SelectionChanged="Subject_SelectionChanged" />
+            <Button Content="Įrašyti pažymį" HorizontalAlignment="Left" Margin="41,344,0,0" VerticalAlignment="Top" Width="71" Height="22" FontSize="10" FontWeight="Bold" Click="Button_Click_Teacher"
+Style="{StaticResource RoundedButtonStyle}">
+                <Button.BorderBrush>
+                    <SolidColorBrush Color="Black"/>
+                </Button.BorderBrush>
+                <Button.BorderThickness>
+                    <Thickness>1.5</Thickness>
+                </Button.BorderThickness>
+                <Button.Background>
+                    <SolidColorBrush Color="White"/>
+                </Button.Background>
+            </Button>
+            <ComboBox Name="GradeRedag" HorizontalAlignment="Left" Margin="191,162,0,0" VerticalAlignment="Top" Width="120" Height="22" SelectionChanged="GradeRedag_SelectionChanged" Loaded="GradeRedag_Loaded"/>
+            <TextBox Name="Redagavimas" HorizontalAlignment="Left" Margin="343,162,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="43" Height="22"/>
+            <Button Content="Redaguoti" HorizontalAlignment="Left" Margin="415,162,0,0" VerticalAlignment="Top" Width="104" Height="22" FontSize="13" FontWeight="Bold" Click="Button_Click_Redag"
+Style="{StaticResource RoundedButtonStyle}">
+                <Button.BorderBrush>
+                    <SolidColorBrush Color="Black"/>
+                </Button.BorderBrush>
+                <Button.BorderThickness>
+                    <Thickness>1.5</Thickness>
+                </Button.BorderThickness>
+                <Button.Background>
+                    <SolidColorBrush Color="White"/>
+                </Button.Background>
+            </Button>
+            <Label Content="Redaguoti pažymį:" HorizontalAlignment="Left" Margin="191,114,0,0" VerticalAlignment="Top" Width="174" FontWeight="Bold" FontSize="14"/>
+        </Grid>
+    </Viewbox>
+</Window>
